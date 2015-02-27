@@ -1,8 +1,9 @@
 FROM ubuntu
-MAINTAINER Johannes 'fish' Ziemke <docker@freigeist.org>
+# Original maintainer: Johannes 'fish' Ziemke <docker@freigeist.org>
+MAINTAINER Bertrand Roussel <bertrand.roussel@cor-net.org>
 
-VOLUME  [ "/dumps" ]
+VOLUME  [ "/data" ]
 RUN apt-get update &&  apt-get -y -q install tcpdump
 
-ENTRYPOINT [ "/usr/sbin/tcpdump", "-C", "1000", "-W", "100", \
-             "-v", "-w", "/dumps/dump" ]
+CMD [ "-C", "1000", "-W", "100", "-v", "-w", "/data/dump" ]
+ENTRYPOINT [ "/usr/sbin/tcpdump" ]
