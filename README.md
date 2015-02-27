@@ -14,6 +14,12 @@ use tcpdump, but this will override default parameters:
     $ docker run --net=host corfr/tcpdump -i eth2 port 80
 
 If you want storage to happen on your host:
+(the important part is to mount the volume using docker -v, and to write data in that volume using tcpdump -w)
 
     $ docker run --net=host -v $PWD:/data corfr/tcpdump -i any -w /data/dump.pcap "icmp"
+
+To analyze the stream live remotely from wireshark:
+(don't forget to filter out traffic on port 22)
+
+    $ ssh root@remote-host "docker run --rm --net=host corfr/tcpdump -i any -w - not port 22 2>/dev/null" |wireshark -k -i -
 
