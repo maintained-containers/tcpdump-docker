@@ -1,3 +1,9 @@
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/maintained/tcpdump?style=flat-square)
+
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/maintained/tcpdump?style=flat-square)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/maintained-containers/tcpdump-docker?style=flat-square)
+
 # tcpdump docker container
 
 This simple image runs a tcpdump and writes dumps to the volume /data.
