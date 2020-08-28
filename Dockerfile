@@ -1,6 +1,8 @@
 FROM alpine
 # Original maintainer: Johannes 'fish' Ziemke <docker@freigeist.org>
-MAINTAINER Bertrand Roussel <bertrand.roussel@cor-net.org>
+# Original maintainer #2: Bertrand Roussel <bertrand.roussel@cor-net.org>
+
+MAINTAINER Robert Bost <bostrt@gmail.com>
 
 VOLUME  [ "/data" ]
 RUN apk add --no-cache tcpdump coreutils
